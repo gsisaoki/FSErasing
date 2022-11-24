@@ -11,6 +11,9 @@ This repository contains the following used for the results in [our paper]():
 - our original semantic labels for detailed face parsing
 
 ## Requirements and Installation
+- pytorch (recommemded >= 1.8.1)
+- pandas (recommended >= 1.2.4)
+- opencv-python (recommended >= 4.5.1.48) 
 
 ## Downloading the dataset
 
