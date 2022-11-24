@@ -3,7 +3,7 @@
 ## Introduction
 We proposes a data augmentation method, called Face Semantic Erasing (FSErasing), for face recognition using face parsing.
 Face recognition models are trained with face images erased random face semantic regions such as hair, cheek, forehead, nose, and eye.
-We also propose the original face semantic labels with 25 classes, which include 9 additional classes ``right_forehead``, ``cheek``, ``chin``, etc.
+We also propose the original face semantic labels with 25 classes, which include 9 additional classes ``right_cheek``, ``left_cheek``, ``right_chin``, ``left_chin``, ``right_forehead``, ``left_forehead``, ``middle_forehead``, ``around_right_eye``, ``around_left_eye``.
 
 This repository contains the following used for the results in [our paper]():
 - implementation of FSErasing
