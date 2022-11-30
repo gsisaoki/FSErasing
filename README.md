@@ -7,19 +7,25 @@ We also propose the original face semantic labels with 25 classes, which include
 
 This repository contains the following used for the results in [our paper]():
 - implementation of FSErasing
-- implementation of the visualization method for face recognition models using face parsing, which called *Face Semantic Class Activation Mapping (FS-CAM)* in this repositoty)
+- implementation of the visualization method for face recognition models using face parsing, which called *Face Semantic Class Activation Mapping (FS-CAM)* in this repositoty
 - our original semantic labels with 25 classes for detailed face parsing
 
-## Requirements and Installation
+## Requirements
 - Python 3.x (recommended >= 3.8.8)
 - pytorch (recommemded >= 1.8.1)
 - pandas (recommended >= 1.2.4)
 - opencv-python (recommended >= 4.5.1.48) 
 
-## Downloading the dataset
+## Dataset
+### Downloading the dataset
+You can download the detailed face semantic label (with 25 classes) for FaceSynthetics dataset [^1] from the link below.
+[Google Drive]()
+
+
 
 ## Downloading pre-trained face parsing models
 
 ## Example notebooks
 
 ## Acknowledgement
+[^1]: E. Wood, T. Baltrusaitis, C. Hewitt, S. Dziadzio, T.J. Cashman, and J. Shotton, "Fake It Till You Make It: Face analysis in the wild using synthetic data alone," Proc. Int'l Conf. Computer Vision (ICCV), pp. 3681--3691, Oct. 2021.
