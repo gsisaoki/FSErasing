@@ -29,10 +29,12 @@ They are available for download at [the official repository of FaceSynthetics](h
 ### Dataset layout
 The detailed face semantic labels are contained in a single .zip file.
 
-'''
+```
 detailed_facesynthetics.zip
-├── 
-'''
+├── labels25
+|   └── {frame_id}_seg.png    # Segmentation image, where each pixel has an integer value mapping to the categories below
+|
+```
 
 ## Pre-trained face parsing models
 
