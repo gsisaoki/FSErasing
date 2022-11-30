@@ -18,7 +18,7 @@ This repository contains the following used for the results in [our paper]():
 
 ## Dataset
 ### Downloading the dataset
-You can download the detailed face semantic label (with 25 classes) for FaceSynthetics dataset [1] from the link below.
+You can download the detailed face semantic label (with 25 classes) for FaceSynthetics dataset [^1] from the link below.
 [Google Drive]()
 
 
@@ -27,7 +27,7 @@ You can download the detailed face semantic label (with 25 classes) for FaceSynt
 
 ## Example notebooks
 
-## References
-[1] E. Wood, T. Baltrusaitis, C. Hewitt, S. Dziadzio, T.J. Cashman, and J. Shotton, "Fake It Till You Make It: Face analysis in the wild using synthetic data alone," Proc. Int'l Conf. Computer Vision (ICCV), pp. 3681--3691, Oct. 2021.
-
 ## Acknowledgments
+
+
+[^1] E. Wood, T. Baltrusaitis, C. Hewitt, S. Dziadzio, T.J. Cashman, and J. Shotton, "Fake It Till You Make It: Face analysis in the wild using synthetic data alone," Proc. Int'l Conf. Computer Vision (ICCV), pp. 3681--3691, Oct. 2021.
