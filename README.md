@@ -18,12 +18,23 @@ This repository contains the following used for the results in [our paper]():
 
 ## Dataset
 ### Downloading the dataset
-You can download the detailed face semantic label (with 25 classes) for FaceSynthetics dataset [^1] from the link below.
+You can download the detailed face semantic labels (with 25 classes) for FaceSynthetics dataset [^1] from the link below.
+
 [Google Drive]()
 
 
+Note that the face images and landmark labels are **NOT** included in our distributed files.
+They are available for download at [the official repository of FaceSynthetics](https://github.com/microsoft/FaceSynthetics) (full dataset of 100,000 images).
 
-## Downloading pre-trained face parsing models
+### Dataset layout
+The detailed face semantic labels are contained in a single .zip file.
+
+'''
+detailed_facesynthetics.zip
+├── 
+'''
+
+## Pre-trained face parsing models
 
 ## Example notebooks
 
