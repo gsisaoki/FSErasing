@@ -32,8 +32,10 @@ The detailed face semantic labels are contained in a single .zip file.
 ```
 detailed_facesynthetics.zip
 ├── labels25
-|   └── {frame_id}_seg.png    # Segmentation image, where each pixel has an integer value mapping to the categories below
-|
+|   └── {frame_id}_seg.png   # Segmentation image, where each pixel has an integer value mapping to the categories below (0 to 24)
+├── labels8
+|   └── {frame_id}_seg.png   # Segmentation image, where each pixel has an integer value mapping to the categories below (1 to 9)
+└── anno_list.csv            # .csv file, described the frame IDs, landmark labels, and abailability of our detailed labels with 25 classes
 ```
 
 ## Pre-trained face parsing models
