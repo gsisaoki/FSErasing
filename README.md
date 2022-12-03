@@ -14,7 +14,9 @@ This repository contains the following used for the results in [our paper]():
 - Python 3.x (recommended >= 3.8.8)
 - pytorch (recommemded >= 1.8.1)
 - pandas (recommended >= 1.2.4)
-- opencv-python (recommended >= 4.5.1.48) 
+- opencv-python (recommended >= 4.5.1.48)
+- scipy (recommended >= 1.6.2)
+- scikit-learn (recommended >= 0.24.1)
 
 ## Dataset
 ### Downloading the dataset
@@ -98,9 +100,18 @@ The int value of each pixel in the segmentation image assigned accorsing to the 
 | 24 | *Headware* |
 
 
-## Pre-trained face parsing models
+## Pre-trained face parsing model
+The pre-trained face parsing model is available from the link below.
+The model is trained using 88,084 face images in FaceSythetics dataset [^1] with our detailed semantic labels.
+If you want to obtain more details of experimental conditions, please check Section 5.1.2 in our paper.
 
-## Example notebooks
+[Google Drive]()
+
+
+Note that the images and labels used for training are applied similarity transformation based on 5 facial landmarks and size of 112 × 112 pixels.
+
+## Sample codes
+
 
 ## Acknowledgments
 
