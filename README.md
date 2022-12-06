@@ -20,13 +20,13 @@ This repository contains the following used for the results in [our paper]():
 
 ## Dataset
 ### Downloading the dataset
-You can download the detailed face semantic labels (with 25 classes) for FaceSynthetics dataset [^1] from the link below.
+You can download the detailed face semantic labels (with 25 classes) for [FaceSynthetics dataset](https://github.com/microsoft/FaceSynthetics) [^1] from the link below.
 
 [Google Drive]()
 
 
 Note that the face images and landmark labels are **NOT** included in our distributed files.
-They are available for download at [the official repository of FaceSynthetics](https://github.com/microsoft/FaceSynthetics) (full dataset of 100,000 images).
+They are available for download at the official GitHub repository of [FaceSynthetics](https://github.com/microsoft/FaceSynthetics) (full dataset of 100,000 images).
 
 ### Dataset layout
 The detailed face semantic labels are contained in a single .zip file.
@@ -108,7 +108,8 @@ If you want to obtain more details of experimental conditions, please check Sect
 [Google Drive]()
 
 
-Note that the images and labels used for training are applied similarity transformation based on 5 facial landmarks and size of 112 × 112 pixels.
+Note that the images and labels used for training are aligned using similarity transformation based on 5 facial landmarks and size of 112 × 112 pixels.
+The alignment method is followed the general one for face recognition, such as introduced at [insightface](https://github.com/deepinsight/insightface/blob/607b026481dbf7d7191b638078e4f0c4c968b744/recognition/arcface_torch/eval_ijbc.py).
 
 
 ## Sample codes
