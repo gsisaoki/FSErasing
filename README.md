@@ -110,10 +110,13 @@ If you want to obtain more details of experimental conditions, please check Sect
 
 Note that the images and labels used for training are applied similarity transformation based on 5 facial landmarks and size of 112 × 112 pixels.
 
+
 ## Sample codes
+### FSErasing sample
 
 
-## Acknowledgments
+### FS-CAM sample
+
 
 
 [^1]: E. Wood, T. Baltrusaitis, C. Hewitt, S. Dziadzio, T.J. Cashman, and J. Shotton, "Fake It Till You Make It: Face analysis in the wild using synthetic data alone," Proc. Int'l Conf. Computer Vision (ICCV), pp. 3681--3691, Oct. 2021.
