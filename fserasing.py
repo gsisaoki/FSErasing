@@ -1,9 +1,21 @@
-import torch
 import os
+import torch
+from tqdm import tqdm
 
 
-class ParseErasing(object):
-    def __init__(self, p=1.0, n_class=25, n_erase=1, value='random', mask_path='./masks.pth', model=None, dataloader=None):
+def multi2binary(masks, n_class):
+    b, h, w = masks.size()
+    b_masks = torch.zeros((b, n_class, h, w), dtype=torch.long)
+
+    for i in range(n_class):
+        b_masks[:, i, :, :] = torch.where(masks == i, 1.0, 0.0)
+
+    return b_masks
+
+
+
+class FSErasing(object):
+    def __init__(self, p=1.0, n_class=25, n_erase=1, value='random', mask_path='./masks.pth', model=None, dataloader=None, device=None):
         self.p = p
         self.n_class = n_class
         self.n_erase = n_erase
@@ -11,7 +23,7 @@ class ParseErasing(object):
 
         if not(os.path.exists(mask_path)):
             if self.model is not None:
-                self._estimate_masks(mask_path, model, dataset)
+                self._estimate_masks(mask_path, model, dataloader, device)
             else:
                 raise Exception("ArgumentError: file provided by 'mask_path' does not exist, so it is necessary to provide 'model' and 'dataloader' to estimate new masks.") 
 
@@ -22,20 +34,27 @@ class ParseErasing(object):
         self.cls_prob = torch.ones(self.n_class, dtype=torch.float32)
 
 
-    def _estimate_masks(self):
-        self.model.eval()
+    def _estimate_masks(self, mask_path, model, dataloader, device):
+        if device is None:
+            device = 'cpu'
+
+        model = torch.nn.DataParallel(model).to(device)
+        model.eval()
         
         masks = []
-        for img in dataloader:
+        for inputs in dataloader:
+            inputs = inputs.to(device)
+            mask = model(inputs)
+            mask = mask.softmax(dim=1).cpu().detach().to(torch.uint8)
+            masks.append(mask)
+            
+        masks = torch.cat(masks, dim=0)
         
+        torch.save(masks, mask_path)
 
 
-    def __call__(self, img, index, flip):
-        if self.masks is not None:
-            self.mask = self.masks[index]
-        else:
-            self.mask = torch.from_numpy(cv2.imread(self.mask_paths[index], cv2.IMREAD_GRAYSCALE))
-        self.mask = multi2binary(self.mask.unsqueeze(0), num_classes=self.n_class)[0].bool()
+    def __call__(self, img, index, flip=False):
+        self.mask = multi2binary(self.masks[index].unsqueeze(0), n_class=self.n_class)[0].bool()
 
         if flip:
             self.mask = torch.flip(self.mask, (2,))
@@ -67,54 +86,7 @@ class ParseErasing(object):
                         v = torch.empty([3, self.h, self.w], dtype=torch.float32)
                         v[:,:,:] = color
                     img = torch.where(self.mask[cls_id], v, img)
-                elif self.v == 'choice_all_1':
-                    y, x = torch.randint(0, self.h, (2,))
-                    v = torch.empty([3, self.h, self.w], dtype=torch.float32)
-                    v[:,:,:] = img[:, y, x].unsqueeze(1).unsqueeze(1)
-                    img = torch.where(self.mask[cls_id], v, img)
-                elif self.v == 'choice_mask_1':
-                    yx = torch.nonzero(self.mask[cls_id])
-                    if len(yx) == 0:
-                        y, x = torch.randint(0, self.h, (2,))
-                    else:
-                        idx = torch.randint(0, len(yx), (1,))[0]
-                        y, x = yx[idx]
-                    v = torch.empty([3, self.h, self.w], dtype=torch.float32)
-                    v[:,:,:] = img[:, y, x].unsqueeze(1).unsqueeze(1)
-                    img = torch.where(self.mask[cls_id], v, img)
-                elif self.v == 'mean_all_1':
-                    avg = torch.mean(img, dim=(1,2))
-                    v = torch.empty([3, self.h, self.w], dtype=torch.float32)
-                    v[:,:,:] = avg.unsqueeze(1).unsqueeze(1)
-                    img = torch.where(self.mask[cls_id], v, img)
-                elif self.v == 'mean_mask_1':
-                    y, x = torch.nonzero(self.mask[cls_id], as_tuple=True)
-                    if len(y) == 0:
-                        avg = torch.mean(img, dim=(1,2))
-                    else:
-                        avg = torch.mean(img[:, y, x], dim=(1,))
-                    v = torch.empty([3, self.h, self.w], dtype=torch.float32)
-                    v[:,:,:] = avg.unsqueeze(1).unsqueeze(1)
-                    img = torch.where(self.mask[cls_id], v, img)
-                elif self.v == 'choice_all':
-                    y, x = torch.nonzero(self.mask[cls_id], as_tuple=True)
-                    f_img = img.flatten(start_dim=1)
-                    idx = torch.randint(0, f_img.size(1), (len(y),))
-                    v = f_img[:, idx]
-                    img[:, y, x] = v
-                elif self.v == 'choice_mask':
-                    yx = torch.nonzero(self.mask[cls_id])
-                    l_yx = len(yx)
-                    if l_yx == 0:
-                        f_img = img.flatten(start_dim=1)
-                        idx = torch.randint(0, f_img.size(1), (len(yx),))
-                        v = f_img[:, idx]
-                    else:
-                        idx = torch.randint(0, l_yx, (l_yx,))
-                        t_yx = yx[idx, :]
-                        v = img[:, t_yx[:, 0], t_yx[:, 1]]
-                    img[:, yx[:, 0], yx[:, 1]] = v
-                else:
+                elif type(self.v) in [int, float]:
                     v = torch.tensor(self.v).float()
                     img = torch.where(self.mask[cls_id], v, img)
 
