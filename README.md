@@ -34,9 +34,9 @@ We recommend that move the unzipped files and folders: ``labels25``, ``labels8``
 
 ```
 detailed_facesynthetics.zip
-├── labels25
+├── labels_25
 |   └── {frame_id}_seg.png   # Segmentation image, where each pixel has an integer value mapping to the categories below (0 to 24)
-├── labels9
+├── labels_9
 |   └── {frame_id}_seg.png   # Segmentation image, where each pixel has an integer value mapping to the categories below (0 to 9)
 └── anno_list.csv            # .csv file, described the frame ID and abailability of our detailed labels with 25 classes
 ```
