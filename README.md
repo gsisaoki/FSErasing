@@ -40,7 +40,7 @@ They are available for download at the official GitHub repository of [FaceSynthe
 
 ### Dataset layout
 The detailed face semantic labels are contained in a single .zip file.
-We recommend that move the unzipped files and folders: ``labels25``, ``labels8``, ``anno_list.csv`` into the folder downloaded at the official repository of FaceSynthetics.
+We recommend that move the unzipped files and folders: ``labels25``, ``labels9``, ``anno_list.csv`` into the folder downloaded at the official repository of FaceSynthetics.
 
 ```
 detailed_facesynthetics.zip
