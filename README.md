@@ -45,14 +45,14 @@ The .csv file has table data with 2 columns and 100,000 rows, like the following
 
 | frame_id | with_25 |
 | :---: | :---: |
-| 000000 | 1 |
-| 000001 | 1 |
+| 0 | 1 |
+| 1 | 1 |
 | ... | ... |
-| 000010 | 0 |
-| 000011 | 1 |
-| 000012 | 0 |
+| 10 | 0 |
+| 11 | 1 |
+| 12 | 0 |
 | ... | ... |
-| 099999 | 1 |
+| 99999 | 1 |
 
 Our detailed labels are automatically annotated based on the 468 landmarks estimated using [Face Mesh (Google Mediapipe)](https://google.github.io/mediapipe/solutions/face_mesh.html) [^2], and there are 11,916 images for which annotation failed due to landmark detection errors or other reasons.
 More information is available from our paper.
