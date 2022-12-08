@@ -19,6 +19,7 @@ This repository contains the following used for the results in [our paper]():
 - opencv-python (recommended >= 4.5.1.48)
 - scipy (recommended >= 1.6.2)
 - scikit-learn (recommended >= 0.24.1)
+- tqdm (recommended >= 4.60.0)
 
 ## Dataset
 ### Downloading the dataset
