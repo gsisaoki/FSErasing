@@ -1,3 +1,5 @@
+![facesyn_sample](docs/facesyn_sample_3x8.png)
+
 # FSErasing: Improving Face Recognition with Data Augmentation Using Face Parsing
 
 ## Introduction
