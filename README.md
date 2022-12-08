@@ -14,12 +14,19 @@ This repository contains the following used for the results in [our paper]():
 
 ## Requirements
 - Python 3.x (recommended >= 3.8.8)
+- numpy (recommended >= 1.19.2)
 - pytorch (recommemded >= 1.8.1)
+- torchvision (recommended >= 0.9.1)
 - pandas (recommended >= 1.2.4)
 - opencv-python (recommended >= 4.5.1.48)
 - scipy (recommended >= 1.6.2)
 - scikit-learn (recommended >= 0.24.1)
 - tqdm (recommended >= 4.60.0)
+- matplotlib (recommended >= 3.4.1)
+- scikit-image (recommended >= 0.18.1, only required for [cam.rise.RISE](https://github.com/gsisaoki/FSErasing/blob/eb78a0658345c2abc54565093c25b522caad6fb5/cam/rise.py#L8))
+- kornia (recommended >= 0.5.8, only required for [cam.groupcam.GroupCAM](https://github.com/gsisaoki/FSErasing/blob/eb78a0658345c2abc54565093c25b522caad6fb5/cam/groupcam.py#L8)
+)
+
 
 ## Dataset
 ### Downloading the dataset
