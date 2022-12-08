@@ -110,7 +110,8 @@ The int value of each pixel in the segmentation image assigned accorsing to the 
 | 24 | *Headware* |
 
 
-## Pre-trained face parsing model
+## Pre-trained models
+### Face parsing model
 The pre-trained face parsing model is available from the link below.
 
 [Google Drive](https://drive.google.com/file/d/12POo4ZgcuQlPOS9Cjd5O7GIxbSW36jV7/view?usp=share_link) (443MB)
@@ -122,6 +123,15 @@ If you want to obtain more details of experimental conditions, please check Sect
 
 Note that the images and labels used for training are aligned using similarity transformation based on 5 facial landmarks and size of 112 × 112 pixels.
 The alignment method is followed the general one for face recognition, such as introduced at [insightface/recognition/arcface_torch/eval_ijbc.py](https://github.com/deepinsight/insightface/blob/607b026481dbf7d7191b638078e4f0c4c968b744/recognition/arcface_torch/eval_ijbc.py).
+
+
+### Face recognition model
+The pre-trained face recognition model is available from the link below.
+
+[Google Drive](https://drive.google.com/file/d/1k4kL7XMk3TNOABx4G_o2gpPdtuPjdZ0y/view?usp=share_link) (309MB)
+
+
+The network architecture is ResNet-34, which is [improved version](https://github.com/deepinsight/insightface/blob/607b026481dbf7d7191b638078e4f0c4c968b744/recognition/arcface_torch/backbones/iresnet.py) of ResNet by the authors of ArcFace paper [^5] and suitable for face recognition using a smaller input image than that in general image recognition tasks.
 
 
 ## Sample codes
@@ -139,3 +149,5 @@ The alignment method is followed the general one for face recognition, such as i
 [^3]: O. Ronneberger, P. Fischer, and T. Brox, "U-Net: Convolutional networks for biomedical image segmentation," Proc. Int'l Conf. Medical Image Computing and Computer Assisted Intervention, Springer, LNCS, vol. 9351, pp. 234--241, Oct. 2015.
 
 [^4]: K. He, X. Zhang, S. Ren, and J. Sun, "Deep residual learning for image recognition," Proc. IEEE Conf. Computer Vision and Pattern Recognition, pp. 770--778, Jun. 2016.
+
+[^5]: J. Deng, J. Guo, and S. Zafeiriou, "ArcFace: Additive angular margin loss for deep face recognition," arXiv, abs/1801.07698v1, Jan. 2018.
