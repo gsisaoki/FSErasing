@@ -121,7 +121,7 @@ The model is trained using 88,084 face images in FaceSythetics dataset [^1] with
 If you want to obtain more details of experimental conditions, please check Section 5.1.2 in our paper.
 
 Note that the images and labels used for training are aligned using similarity transformation based on 5 facial landmarks and size of 112 × 112 pixels.
-The alignment method is followed the general one for face recognition, such as introduced at [insightface](https://github.com/deepinsight/insightface/blob/607b026481dbf7d7191b638078e4f0c4c968b744/recognition/arcface_torch/eval_ijbc.py).
+The alignment method is followed the general one for face recognition, such as introduced at [insightface/recognition/arcface_torch/eval_ijbc.py](https://github.com/deepinsight/insightface/blob/607b026481dbf7d7191b638078e4f0c4c968b744/recognition/arcface_torch/eval_ijbc.py).
 
 
 ## Sample codes
