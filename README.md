@@ -102,11 +102,13 @@ The int value of each pixel in the segmentation image assigned accorsing to the 
 
 ## Pre-trained face parsing model
 The pre-trained face parsing model is available from the link below.
+
+[Google Drive](https://drive.google.com/file/d/12POo4ZgcuQlPOS9Cjd5O7GIxbSW36jV7/view?usp=share_link) (443MB)
+
+
+The network architecture is based on U-Net [^3], which encoder is replaced ResNet-18 [^4].
 The model is trained using 88,084 face images in FaceSythetics dataset [^1] with our detailed semantic labels.
 If you want to obtain more details of experimental conditions, please check Section 5.1.2 in our paper.
-
-[Google Drive]()
-
 
 Note that the images and labels used for training are aligned using similarity transformation based on 5 facial landmarks and size of 112 × 112 pixels.
 The alignment method is followed the general one for face recognition, such as introduced at [insightface](https://github.com/deepinsight/insightface/blob/607b026481dbf7d7191b638078e4f0c4c968b744/recognition/arcface_torch/eval_ijbc.py).
@@ -123,3 +125,7 @@ The alignment method is followed the general one for face recognition, such as i
 [^1]: E. Wood, T. Baltrusaitis, C. Hewitt, S. Dziadzio, T.J. Cashman, and J. Shotton, "Fake It Till You Make It: Face analysis in the wild using synthetic data alone," Proc. Int'l Conf. Computer Vision (ICCV), pp. 3681--3691, Oct. 2021.
 
 [^2]: Y. Kartynnik, A, Ablavatski, I. Grishchenko, and M. Grundmann, "Real-time facial surface geometry from monocular video on mobile GPUs," arXiv, abs/1907.06724, Jun. 2019.
+
+[^3]: O. Ronneberger, P. Fischer, and T. Brox, "U-Net: Convolutional networks for biomedical image segmentation," Proc. Int'l Conf. Medical Image Computing and Computer Assisted Intervention, Springer, LNCS, vol. 9351, pp. 234--241, Oct. 2015.
+
+[^4]: K. He, X. Zhang, S. Ren, and J. Sun, "Deep residual learning for image recognition," Proc. IEEE Conf. Computer Vision and Pattern Recognition, pp. 770--778, Jun. 2016.
