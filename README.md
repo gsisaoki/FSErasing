@@ -32,7 +32,7 @@ This repository contains the following used for the results in [our paper]():
 ### Downloading the dataset
 You can download the detailed face semantic labels (with 25 classes) for [FaceSynthetics dataset](https://github.com/microsoft/FaceSynthetics) [^1] from the link below.
 
-[Google Drive](https://drive.google.com/file/d/1cmxnd9dtWsoLiO21zJ6GF-cgZPdH1IHB/view?usp=share_link) (739MB, unzip: 1.1GB)
+[Google Drive](https://drive.google.com/file/d/1yHHaDRHq9wCpf1vsXhXJHU2SEc97kuNF/view?usp=share_link) (739MB, unzip: 1.1GB)
 
 
 Note that the face images and landmark labels are **NOT** included in our distributed files.
