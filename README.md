@@ -40,13 +40,13 @@ They are available for download at the official GitHub repository of [FaceSynthe
 
 ### Dataset layout
 The detailed face semantic labels are contained in a single .zip file.
-We recommend that move the unzipped files and folders: ``labels25``, ``labels9``, ``anno_list.csv`` into the folder downloaded at the official repository of FaceSynthetics.
+We recommend that move the unzipped files and folders: ``labels_25``, ``labels_10``, ``anno_list.csv`` into the folder downloaded at the official repository of FaceSynthetics.
 
 ```
 detailed_facesynthetics.zip
 ├── labels_25
 |   └── {frame_id}_seg.png   # Segmentation image, where each pixel has an integer value mapping to the categories below (0 to 24)
-├── labels_9
+├── labels_10
 |   └── {frame_id}_seg.png   # Segmentation image, where each pixel has an integer value mapping to the categories below (0 to 9)
 └── anno_list.csv            # .csv file, described the frame ID and abailability of our detailed labels with 25 classes
 ```
