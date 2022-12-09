@@ -75,7 +75,7 @@ df = pd.read_csv('anno_list.csv')
 id_list = df[df['with_25'] == 1]['frame_id'].values
 
 image_paths = [f'./images/{x:06d}.png' for x in id_list]         # list of paths of 88,084 images
-label_paths = [f'./labels25/{x:06d}_seg.png' for x in id_list]   # list of paths of 88,084 detailed labels with 25 classes
+label_paths = [f'./labels_25/{x:06d}_seg.png' for x in id_list]   # list of paths of 88,084 detailed labels with 25 classes
 ```
 
 ### Class index assignment
