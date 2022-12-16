@@ -13,7 +13,7 @@ This repository contains the following used for the results in [our paper]():
 - our original semantic labels with 25 classes for detailed face parsing
 
 ## Requirements
-- Python 3.x (recommended >= 3.8.8)
+- Python 3 (recommended >= 3.8.8)
 - numpy (recommended >= 1.19.2)
 - pytorch (recommemded >= 1.8.1)
 - torchvision (recommended >= 0.9.1)
