@@ -71,7 +71,7 @@ class FSErasing(object):
 
             for cls_id in self.target_classes:
                 if self.v == 'random':
-                    v = torch.empty([3, self.h, self.w], dtype=torch.float32).uniform_()
+                    v = torch.empty([3, self.h, self.w], dtype=torch.float32).normal_()
                     img = torch.where(self.mask[cls_id], v, img)
                 elif self.v == 'random_1':
                     color = torch.normal(mean=0, std=1, size=(3,1,1))
@@ -80,7 +80,7 @@ class FSErasing(object):
                     img = torch.where(self.mask[cls_id], v, img)
                 elif self.v == 'random_mix':
                     if torch.rand(1) < 0.5:
-                        v = torch.empty([3, self.h, self.w], dtype=torch.float32).uniform_()
+                        v = torch.empty([3, self.h, self.w], dtype=torch.float32).normal_()
                     else:
                         color = torch.normal(mean=0, std=1, size=(3,1,1))
                         v = torch.empty([3, self.h, self.w], dtype=torch.float32)
