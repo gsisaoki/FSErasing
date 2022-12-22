@@ -13,7 +13,7 @@ This repository contains the following used for the results in [our paper]():
 - our original semantic labels with 25 classes for detailed face parsing
 
 ## Requirements
-- Python 3 (recommended >= 3.8.8)
+- Python 3.x (recommended >= 3.8.8)
 - numpy (recommended >= 1.19.2)
 - pytorch (recommemded >= 1.8.1)
 - torchvision (recommended >= 0.9.1)
@@ -131,7 +131,7 @@ The pre-trained face recognition model is available from the link below.
 [Google Drive](https://drive.google.com/file/d/1k4kL7XMk3TNOABx4G_o2gpPdtuPjdZ0y/view?usp=share_link) (309MB)
 
 
-The network architecture is ResNet-34, which is [improved version](https://github.com/deepinsight/insightface/blob/607b026481dbf7d7191b638078e4f0c4c968b744/recognition/arcface_torch/backbones/iresnet.py) of ResNet by the authors of ArcFace paper [^5] and suitable for face recognition using a smaller input image than that in general image recognition tasks.
+We use ResNet-34 as the network architecture, which is [improved version](https://github.com/deepinsight/insightface/blob/607b026481dbf7d7191b638078e4f0c4c968b744/recognition/arcface_torch/backbones/iresnet.py) of ResNet by the authors of ArcFace paper [^5] and suitable for face recognition using a smaller input image than that in general image recognition tasks.
 
 
 ## Sample codes
